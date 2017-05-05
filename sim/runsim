@@ -1,0 +1,13 @@
+vcs -full64 +vcs+lic+wait -debug_pp -sverilog -R -l vcs.log \
+-override_timescale=1ps/1ps \
+../rtl/verilog/*.v \
++incdir+../rtl/include \
+../testbench/tb_xge_mac.sv \
+../interface/xge_mac_interface.sv \
+../testcases/main/testcase.sv \
++incdir+../classes \
++ntb_random_seed_automatic \
+-cm line+cond+branch+fsm+tgl \
+-cm path -lca \
+-cm_log ./coverage.log \
+-cm_dir ./COVERAGE
